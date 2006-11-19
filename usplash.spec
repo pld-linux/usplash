@@ -1,15 +1,13 @@
-%define		_rel	32
-#
 Summary:	Userspace bootsplash utility
 Summary(de):	Eine Boosplashes Utility die auf der Benutzerebene arbeitet
 Summary(pl):	Narzêdzie do bootsplasha w przestrzeni u¿ytkownika
 Name:		usplash
-Version:	0.1
-Release:	0.%{_rel}.1
+Version:	0.3e
+Release:	0.1
 License:	GPL
 Group:		Applications
-Source0:	%{name}_%{version}-%{_rel}.tar.gz
-# Source0-md5:	75b9bbc47fc661e6827e4db36ac0d875
+Source0:	http://ftp.debian.org/debian/pool/main/u/usplash/%{name}_%{version}.tar.gz
+# Source0-md5:	7a652496b95eb1828e2de695712a8693
 URL:		https://wiki.ubuntu.com/USplash
 BuildRequires:	gd-devel >= 2.0.0
 BuildRequires:	libpng-devel
@@ -57,6 +55,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog README.usplash
+%doc README
 %attr(755,root,root) %{_sbindir}/*
 %{_libdir}/%{name}
