@@ -1,6 +1,6 @@
 Summary:	Userspace bootsplash utility
-Summary(de):	Eine Boosplashes Utility die auf der Benutzerebene arbeitet
-Summary(pl):	Narzêdzie do bootsplasha w przestrzeni u¿ytkownika
+Summary(de.UTF-8):   Eine Boosplashes Utility die auf der Benutzerebene arbeitet
+Summary(pl.UTF-8):   NarzÄ™dzie do bootsplasha w przestrzeni uÅ¼ytkownika
 Name:		usplash
 Version:	0.3e
 Release:	0.1
@@ -21,19 +21,19 @@ interface to draw a splash screen at boot. It has a companion utility
 that is able to send commands to usplash, allowing information about
 the bootup sequence to be displayed in a more attractive way.
 
-%description -l de
+%description -l de.UTF-8
 Usplash ist ein Programm dass auf der Benutzerebene arbeit und den
 Linux Framepuffer benutzt um ein Bild beim Booten zu zeichnen. Es hat
 ein Begleitprogramm dass Befehle an Usplash sendet, die dazu dienen
 die Bootvorgang Informationen atraktiver zu gestalten.
 
-%description -l pl
-Usplash to aplikacja dzia³aj±ca w przestrzeni u¿ytkownika
-wykorzystuj±ca linuksowy interfejs framebuffera do rysowania ekranu
+%description -l pl.UTF-8
+Usplash to aplikacja dziaÅ‚ajÄ…ca w przestrzeni uÅ¼ytkownika
+wykorzystujÄ…ca linuksowy interfejs framebuffera do rysowania ekranu
 startowego (splash screen) podczas startu systemu. Zawiera
-towarzysz±ce narzêdzie do wysy³ania poleceñ do usplasha, pozwalaj±ce
-wy¶wietlaæ informacje o sekwencji startowej w bardziej atrakcyjny
-sposób.
+towarzyszÄ…ce narzÄ™dzie do wysyÅ‚ania poleceÅ„ do usplasha, pozwalajÄ…ce
+wyÅ›wietlaÄ‡ informacje o sekwencji startowej w bardziej atrakcyjny
+sposÃ³b.
 
 %prep
 %setup -q
