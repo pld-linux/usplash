@@ -1,6 +1,6 @@
 Summary:	Userspace bootsplash utility
-Summary(de.UTF-8):   Eine Boosplashes Utility die auf der Benutzerebene arbeitet
-Summary(pl.UTF-8):   Narzędzie do bootsplasha w przestrzeni użytkownika
+Summary(de.UTF-8):	Eine Boosplashes Utility die auf der Benutzerebene arbeitet
+Summary(pl.UTF-8):	Narzędzie do bootsplasha w przestrzeni użytkownika
 Name:		usplash
 Version:	0.3e
 Release:	0.1
