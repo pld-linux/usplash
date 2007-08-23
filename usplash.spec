@@ -3,7 +3,7 @@ Summary(de.UTF-8):	Eine Boosplashes Utility die auf der Benutzerebene arbeitet
 Summary(pl.UTF-8):	Narzędzie do bootsplasha w przestrzeni użytkownika
 Name:		usplash
 Version:	0.5.2
-Release:	2
+Release:	3
 License:	GPL
 Group:		Applications
 Source0:	http://ftp.debian.org/debian/pool/main/u/usplash/%{name}_%{version}.orig.tar.gz
@@ -76,6 +76,9 @@ install -d $RPM_BUILD_ROOT{%{_libdir}/%{name},%{_sbindir}}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
