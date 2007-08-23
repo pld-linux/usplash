@@ -2,12 +2,13 @@ Summary:	Userspace bootsplash utility
 Summary(de.UTF-8):	Eine Boosplashes Utility die auf der Benutzerebene arbeitet
 Summary(pl.UTF-8):	Narzędzie do bootsplasha w przestrzeni użytkownika
 Name:		usplash
-Version:	0.3e
-Release:	0.1
+Version:	0.5.2
+Release:	1
 License:	GPL
 Group:		Applications
-Source0:	http://ftp.debian.org/debian/pool/main/u/usplash/%{name}_%{version}.tar.gz
-# Source0-md5:	7a652496b95eb1828e2de695712a8693
+Source0:	http://ftp.debian.org/debian/pool/main/u/usplash/%{name}_%{version}.orig.tar.gz
+# Source0-md5:	b715413d4c80d876f3f7823795f0c421
+Patch0:		%{name}-includes.patch
 URL:		https://wiki.ubuntu.com/USplash
 BuildRequires:	gd-devel >= 2.0.0
 BuildRequires:	libpng-devel
@@ -37,16 +38,17 @@ sposób.
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
 %{__make} -C bogl \
 	CC="%{__cc}" \
-	CFLAGS="%{rpmcflags}" \
+	CFLAGS="%{rpmcflags} -fPIC" \
 	LDFLAGS="%{rpmldflags}"
 
 %{__make} \
 	CC="%{__cc}" \
-	CFLAGS="%{rpmcflags}" \
+	CFLAGS="%{rpmcflags} -fPIC" \
 	LDFLAGS="%{rpmldflags}"
 
 %install
@@ -63,4 +65,11 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README
 %attr(755,root,root) %{_sbindir}/*
+%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_prefix}/%{_sbindir}/*
 %{_libdir}/%{name}
+%attr(755,root,root) /lib/libusplash.so.0
+# anythings needs that to build?
+#   /usr/include/libusplash.h
+#   /usr/include/usplash-theme.h
+#   /usr/include/usplash_backend.h
