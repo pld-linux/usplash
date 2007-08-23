@@ -3,7 +3,7 @@ Summary(de.UTF-8):	Eine Boosplashes Utility die auf der Benutzerebene arbeitet
 Summary(pl.UTF-8):	Narzędzie do bootsplasha w przestrzeni użytkownika
 Name:		usplash
 Version:	0.5.2
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications
 Source0:	http://ftp.debian.org/debian/pool/main/u/usplash/%{name}_%{version}.orig.tar.gz
@@ -35,6 +35,22 @@ startowego (splash screen) podczas startu systemu. Zawiera
 towarzyszące narzędzie do wysyłania poleceń do usplasha, pozwalające
 wyświetlać informacje o sekwencji startowej w bardziej atrakcyjny
 sposób.
+
+%package devel
+Summary:	Usplash header files
+Summary(de.UTF-8):	Usplash header Dateien
+Summary(pl.UTF-8):	Pliki nagłówkowe usplasha
+Group:		Development/Libraries
+Requires:	%{name} = %{version}-%{release}
+
+%description devel
+Usplash header files.
+
+%description devel -l de.UTF-8
+Usplash header Dateien.
+
+%description devel -l pl.UTF-8
+Pliki nagłówkowe usplasha.
 
 %prep
 %setup -q
@@ -69,7 +85,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_prefix}/%{_sbindir}/*
 %{_libdir}/%{name}
 %attr(755,root,root) /lib/libusplash.so.0
-# anythings needs that to build?
-#   /usr/include/libusplash.h
-#   /usr/include/usplash-theme.h
-#   /usr/include/usplash_backend.h
+
+%files devel
+%defattr(644,root,root,755)
+%{_includedir}/*.h
