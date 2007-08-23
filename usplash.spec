@@ -12,6 +12,7 @@ Patch0:		%{name}-includes.patch
 URL:		https://wiki.ubuntu.com/USplash
 BuildRequires:	gd-devel >= 2.0.0
 BuildRequires:	libpng-devel
+Requires(post,postun):	/sbin/ldconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sbindir	/sbin
