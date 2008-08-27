@@ -2,12 +2,12 @@ Summary:	Userspace bootsplash utility
 Summary(de.UTF-8):	Eine Boosplashes Utility die auf der Benutzerebene arbeitet
 Summary(pl.UTF-8):	Narzędzie do bootsplasha w przestrzeni użytkownika
 Name:		usplash
-Version:	0.5.2
-Release:	4
+Version:	0.5.19
+Release:	1
 License:	GPL
 Group:		Applications
 Source0:	http://ftp.debian.org/debian/pool/main/u/usplash/%{name}_%{version}.orig.tar.gz
-# Source0-md5:	b715413d4c80d876f3f7823795f0c421
+# Source0-md5:	ede767c140267db65b956d04276d4a23
 Patch0:		%{name}-includes.patch
 URL:		https://wiki.ubuntu.com/USplash
 BuildRequires:	gd-devel >= 2.0.0
@@ -54,7 +54,7 @@ Usplash header Dateien.
 Pliki nagłówkowe usplasha.
 
 %prep
-%setup -q
+%setup -q -n %{name}
 %patch0 -p0
 
 %build
