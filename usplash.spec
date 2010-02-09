@@ -10,6 +10,7 @@ Source0:	http://ftp.debian.org/debian/pool/main/u/usplash/%{name}_%{version}.ori
 # Source0-md5:	ede767c140267db65b956d04276d4a23
 Patch0:		%{name}-includes.patch
 URL:		https://wiki.ubuntu.com/USplash
+BuildRequires:	dpkg
 BuildRequires:	gd-devel >= 2.0.0
 BuildRequires:	libpng-devel
 Requires(post,postun):	/sbin/ldconfig
