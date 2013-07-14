@@ -3,12 +3,13 @@ Summary(de.UTF-8):	Eine Boosplashes Utility die auf der Benutzerebene arbeitet
 Summary(pl.UTF-8):	Narzędzie do bootsplasha w przestrzeni użytkownika
 Name:		usplash
 Version:	0.5.19
-Release:	6
+Release:	7
 License:	GPL
 Group:		Applications
 Source0:	http://ftp.debian.org/debian/pool/main/u/usplash/%{name}_%{version}.orig.tar.gz
 # Source0-md5:	ede767c140267db65b956d04276d4a23
 Patch0:		%{name}-includes.patch
+Patch1:		format-security.patch
 URL:		https://wiki.ubuntu.com/USplash
 BuildRequires:	dpkg
 BuildRequires:	gd-devel >= 2.0.0
@@ -57,6 +58,7 @@ Pliki nagłówkowe usplasha.
 %prep
 %setup -q -n %{name}
 %patch0 -p0
+%patch1 -p1
 
 %build
 %{__make} -C bogl \
